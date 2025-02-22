@@ -1,0 +1,9 @@
+Java
+Java é uma linguagem multiplataforma, orientada a objetos e focada em rede que pode ser usada como uma plataforma em si. É uma linguagem rápida, segura e confiável para codificar uma vasta gama de aplicações móveis e softwares empresariais, além de aplicações em big data e tecnologias de servidor.
+Muitos jogos populares para dispositivos móveis, computadores e videogames são criados em Java. Inclusive, jogos modernos que integram tecnologias avançadas, como machine learning ou realidade virtual, utilizam a tecnologia Java em seu desenvolvimento.
+
+Diferença entre Programação Orientada a Objetos e Programação Estruturada
+Abordagem: A programação estruturada é centrada em funções, enquanto a programação orientada a objetos foca mais em objetos.
+Modelagem: A programação orientada a objetos modela o programa como um conjunto de objetos interativos, enquanto a programação estruturada trata o programa como uma lista de instruções.
+Complexidade: A programação orientada a objetos é geralmente mais complexa devido aos seus conceitos de herança e polimorfismo.
+Manutenção: Códigos desenvolvidos em programação orientada a objetos tendem a ser mais fáceis de manter e atualizar devido à sua modularidade.
