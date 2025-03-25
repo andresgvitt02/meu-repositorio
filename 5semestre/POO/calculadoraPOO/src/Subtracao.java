@@ -11,8 +11,6 @@ public class Subtracao implements Operador {
             } else {
                 result -= lista.get(i);
             }
-
-
         }
         return result;
     }
