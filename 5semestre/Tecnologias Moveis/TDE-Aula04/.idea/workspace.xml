@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b801bf48-8e57-4653-9360-7f777b41e2fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Exercicio1/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercicio2/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercicio3/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercicio4/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercicio5/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercicio6/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercicio7/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TDE-Aula04.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TDE-Aula04.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex1/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex1/Pessoa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex2/ContaBancaria.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex2/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex3/Desenvolvedor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex3/Funcionario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex3/Gerente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex3/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
