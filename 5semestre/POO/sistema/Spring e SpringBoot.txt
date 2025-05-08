@@ -1,0 +1,25 @@
+O Spring é um framework Java muito popular usado no desenvolvimento de aplicações corporativas. Ele oferece um conjunto de ferramentas e bibliotecas para facilitar o desenvolvimento, principalmente de aplicações web, com foco em:
+
+Injeção de dependência (IoC - Inversion of Control): ajuda a desacoplar os componentes da aplicação.
+
+Programação orientada a aspectos (AOP): útil para funcionalidades transversais, como logging e segurança.
+
+Suporte a transações.
+
+Integração com diversos frameworks e bibliotecas.
+
+Basicamente, o Spring foi criado para facilitar a vida dos desenvolvedores Java ao lidar com aplicações complexas, tornando o código mais modular, limpo e de fácil manutenção.
+
+O Spring Boot é uma extensão do Spring criada para simplificar ainda mais o desenvolvimento. Ele resolve o principal problema do Spring tradicional: a configuração extensa e complexa.
+
+O Spring Boot traz:
+
+Configuração automática (auto-configuration).
+
+Servidor embutido (como Tomcat ou Jetty): você pode rodar a aplicação como um simples java -jar.
+
+Dependências pré-configuradas (starters): para conectar bancos de dados, criar APIs REST, usar segurança, etc.
+
+Ambiente pronto para produção com pouco esforço.
+
+Ou seja, com Spring Boot, você consegue começar um projeto Spring de forma muito mais rápida e com muito menos configuração manual.
