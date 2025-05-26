@@ -39,4 +39,29 @@ public class UserController {
         return user;
     }
 
+    @PutMapping
+    public User updateUser(@RequestBody User userRequest, @PathVariable int id){
+        User user = listaDeUser
+                .stream()
+                .filter(item -> item.getId() == id)
+                .findFirst()
+                .orElseThrow();
+
+        int index = listaDeUser.indexOf(user);
+        listaDeUser.set(index, userRequest);
+        return userRequest;
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUSer(@PathVariable int id){
+        User user = listaDeUser
+                        .stream()
+                        .filter(item -> item.getId() == id)
+                        .findFirst()
+                        .orElseThrow();
+        listaDeUser.remove(user);
+    }
+
+
+
 }
