@@ -1,6 +1,6 @@
 package com.carro.apirest.service;
 
-import com.carro.apirest.models.Car;
+import com.carro.apirest.entities.Car;
 import com.carro.apirest.repositories.CarRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,22 +16,23 @@ public class CarService {
 
     }
 
-    public Car getCar(int id){
-        return this.carRepository.getCar(id);
+    public Car getCar(Long id){
+        return this.carRepository.findById(id).orElseThrow();
     }
 
     public List<Car> getCars(){
-        return this.carRepository.getCars();
+        return this.carRepository.findAll();
     }
 
     public Car createCar(Car car){
-        return this.carRepository.createUser(car);
+        return this.carRepository.save(car);
     }
-    public void deleteCar(int id){
-        this.carRepository.deleteUser(id);
+    public void deleteCar(Long id){
+        Car car = this.carRepository.findById(id).orElseThrow();
+        this.carRepository.delete(car);
     }
 
-    public Car updateCar(Car carRequest, int id){
-        return this.carRepository.updateCar(carRequest, id);
-    }
+//    public Car updateCar(Car carRequest, Long id){
+//        return this.carRepository.updateCar(carRequest, id);
+//    }
 }

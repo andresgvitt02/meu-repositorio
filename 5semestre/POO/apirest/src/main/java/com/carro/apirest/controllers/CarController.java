@@ -1,6 +1,6 @@
 package com.carro.apirest.controllers;
 
-import com.carro.apirest.models.Car;
+import com.carro.apirest.entities.Car;
 import com.carro.apirest.service.CarService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,11 +34,11 @@ public class CarController {
         return ResponseEntity.created(uri).body(this.carService.createCar(car));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Car> updateCar(@RequestBody Car car, @PathVariable int id) {
-        Car updatedCar = this.carService.updateCar(car, id);
-        return ResponseEntity.ok(updatedCar);
-    }
+//    @PutMapping("/{id}")
+//    public ResponseEntity<Car> updateCar(@RequestBody Car car, @PathVariable int id) {
+//        Car updatedCar = this.carService.updateCar(car, id);
+//        return ResponseEntity.ok(updatedCar);
+//    }
 
 
     @DeleteMapping("/{id}")

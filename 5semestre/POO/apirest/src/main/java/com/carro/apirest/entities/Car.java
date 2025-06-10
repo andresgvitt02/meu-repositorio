@@ -1,10 +1,20 @@
-package com.carro.apirest.models;
+package com.carro.apirest.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity(name = "tb_car")
 public class Car {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String marca;
     private String modelo;
     private int ano;
+
+    public Car() {}
 
     public Car(int id, String marca, String modelo, int ano) {
         this.id = id;
