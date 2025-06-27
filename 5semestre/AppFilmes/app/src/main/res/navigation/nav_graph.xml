@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/listaFilmesFragment">
+
+    <fragment
+        android:id="@+id/listaFilmesFragment"
+        android:name="com.example.appfilmes.ui.fragments.ListaFilmesFragment"
+        android:label="Lista de Filmes"
+        tools:layout="@layout/fragment_lista_filmes">
+        <action
+            android:id="@+id/action_listaFilmes_to_detalhesFilme"
+            app:destination="@id/detalhesFilmeFragment" />
+        <action
+            android:id="@+id/action_listaFilmes_to_adicionarFilme"
+            app:destination="@id/adicionarFilmeFragment">
+            <argument
+                android:name="filmeId"
+                app:argType="integer"
+                android:nullable="true" />
+        </action>
+        <action
+            android:id="@+id/action_listaFilmes_to_editarFilme"
+            app:destination="@id/editarFilmeFragment">
+            <argument
+                android:name="filmeId"
+                app:argType="integer"
+                android:nullable="false" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/detalhesFilmeFragment"
+        android:name="com.example.appfilmes.ui.fragments.DetalhesFilmeFragment"
+        android:label="Detalhes do Filme"
+        tools:layout="@layout/fragment_detalhes_filme">
+        <argument
+            android:name="filmeId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adicionarFilmeFragment"
+        android:name="com.example.appfilmes.ui.fragments.AdicionarFilmeFragment"
+        android:label="Adicionar Filme"
+        tools:layout="@layout/fragment_adicionar_filme">
+        <argument
+            android:name="filmeId"
+            app:argType="integer"
+            android:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editarFilmeFragment"
+        android:name="com.example.appfilmes.ui.fragments.EditarFilmeFragment"
+        android:label="Editar Filme"
+        tools:layout="@layout/fragment_editar_filme">
+        <argument
+            android:name="filmeId"
+            app:argType="integer" />
+    </fragment>
+</navigation>
