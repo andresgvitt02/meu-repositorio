@@ -1,12 +1,15 @@
 package com.example.appfilmes.ui.adapter
 
 import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appfilmes.data.local.entities.Filme
+import com.example.appfilmes.databinding.ItemFilmeBinding
 
 class FilmeAdapter(
     private val onItemClick: (Filme) -> Unit,
-    private val onItemLongClick: (Filme) -> Unit
+    private val onItemLongClick: (Filme) -> Unit,
+    private val onDeleteClick: (Filme) -> Unit // Adicionado para a lixeira
 ) : RecyclerView.Adapter<FilmeAdapter.FilmeViewHolder>() {
 
     private var filmes: List<Filme> = listOf()
@@ -29,12 +32,19 @@ class FilmeAdapter(
 
     inner class FilmeViewHolder(private val binding: ItemFilmeBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(filme: Filme) {
-            binding.tituloText.text = filme.titulo
-            binding.diretorText.text = "Dir: ${filme.diretor}"
+            binding.tituloText.text = "Título: ${filme.titulo}"
+            binding.diretorText.text = "Diretor: ${filme.diretor}"
+
             binding.root.setOnClickListener { onItemClick(filme) }
+
             binding.root.setOnLongClickListener {
                 onItemLongClick(filme)
                 true
+            }
+
+            // Novo: click no ícone da lixeira
+            binding.deleteIcon.setOnClickListener {
+                onDeleteClick(filme)
             }
         }
     }

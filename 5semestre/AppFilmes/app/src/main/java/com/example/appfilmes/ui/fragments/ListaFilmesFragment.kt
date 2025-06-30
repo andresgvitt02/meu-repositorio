@@ -5,13 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.appfilmes.R
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.appfilmes.databinding.FragmentListaFilmesBinding
 import com.example.appfilmes.ui.adapter.FilmeAdapter
 import com.example.appfilmes.ui.viewmodel.FilmeViewModel
 
 class ListaFilmesFragment : Fragment() {
 
-    private lateinit var binding: FragmentFilmeListBinding
+    private lateinit var binding: FragmentListaFilmesBinding
     private val viewModel: FilmeViewModel by viewModels()
     private lateinit var adapter: FilmeAdapter
 
@@ -19,7 +23,7 @@ class ListaFilmesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentFilmeListBinding.inflate(inflater, container, false)
+        binding = FragmentListaFilmesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -31,18 +35,22 @@ class ListaFilmesFragment : Fragment() {
             },
             onItemLongClick = { filme ->
                 viewModel.delete(filme)
+            },
+            onDeleteClick = { filme ->
+                viewModel.delete(filme)
             }
         )
 
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        viewModel.filmes.observe(viewLifecycleOwner, Observer {
-            adapter.submitList(it)
+        viewModel.filmes.observe(viewLifecycleOwner, Observer { filmes ->
+            adapter.submitList(filmes)
         })
 
         binding.fabAdd.setOnClickListener {
-            findNavController().navigate(ListaFilmesFragmentDirections.actionListaFilmesToAdicionarFilme(null))
+            val action = ListaFilmesFragmentDirections.actionListaFilmesToAdicionarFilme()
+            findNavController().navigate(action)
         }
     }
 }

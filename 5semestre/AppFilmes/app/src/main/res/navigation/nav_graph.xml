@@ -9,24 +9,22 @@
         android:name="com.example.appfilmes.ui.fragments.ListaFilmesFragment"
         android:label="Lista de Filmes"
         tools:layout="@layout/fragment_lista_filmes">
+
         <action
             android:id="@+id/action_listaFilmes_to_detalhesFilme"
             app:destination="@id/detalhesFilmeFragment" />
+
         <action
             android:id="@+id/action_listaFilmes_to_adicionarFilme"
-            app:destination="@id/adicionarFilmeFragment">
-            <argument
-                android:name="filmeId"
-                app:argType="integer"
-                android:nullable="true" />
-        </action>
+            app:destination="@id/adicionarFilmeFragment" />
+
         <action
             android:id="@+id/action_listaFilmes_to_editarFilme"
             app:destination="@id/editarFilmeFragment">
             <argument
                 android:name="filmeId"
                 app:argType="integer"
-                android:nullable="false" />
+                android:defaultValue="0" />
         </action>
     </fragment>
 
@@ -35,21 +33,27 @@
         android:name="com.example.appfilmes.ui.fragments.DetalhesFilmeFragment"
         android:label="Detalhes do Filme"
         tools:layout="@layout/fragment_detalhes_filme">
+
         <argument
             android:name="filmeId"
-            app:argType="integer" />
+            app:argType="integer"
+            android:defaultValue="0" />
+
+        <!-- 🚀 Adicionado para permitir navegação -->
+        <action
+            android:id="@+id/action_detalhesFilmeFragment_to_editarFilmeFragment"
+            app:destination="@id/editarFilmeFragment">
+            <argument
+                android:name="filmeId"
+                app:argType="integer" />
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/adicionarFilmeFragment"
         android:name="com.example.appfilmes.ui.fragments.AdicionarFilmeFragment"
         android:label="Adicionar Filme"
-        tools:layout="@layout/fragment_adicionar_filme">
-        <argument
-            android:name="filmeId"
-            app:argType="integer"
-            android:nullable="true" />
-    </fragment>
+        tools:layout="@layout/fragment_adicionar_filme" />
 
     <fragment
         android:id="@+id/editarFilmeFragment"
@@ -58,6 +62,7 @@
         tools:layout="@layout/fragment_editar_filme">
         <argument
             android:name="filmeId"
-            app:argType="integer" />
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 </navigation>

@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.appfilmes.data.local.dao.FilmeDao
 import com.example.appfilmes.data.local.entities.Filme
 
-@Database(entities = [Filme::class], version = 1)
+@Database(entities = [Filme::class], version = 1, exportSchema = false)
 abstract class FilmeDatabase : RoomDatabase() {
     abstract fun filmeDao(): FilmeDao
 
@@ -21,7 +21,9 @@ abstract class FilmeDatabase : RoomDatabase() {
                     context.applicationContext,
                     FilmeDatabase::class.java,
                     "filme_database"
-                ).build()
+                )
+                    .fallbackToDestructiveMigration() // Adicione esta linha para desenvolvimento
+                    .build()
                 INSTANCE = instance
                 instance
             }

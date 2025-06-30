@@ -5,21 +5,29 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.appfilmes.R
 import com.example.appfilmes.data.local.entities.Filme
+import com.example.appfilmes.databinding.FragmentAdicionarFilmeBinding
 import com.example.appfilmes.ui.viewmodel.FilmeViewModel
+import kotlinx.coroutines.Dispatchers
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
+
 
 
 class AdicionarFilmeFragment : Fragment() {
 
-    private lateinit var binding: FragmentFilmeFormBinding
+    private lateinit var binding: FragmentAdicionarFilmeBinding
     private val viewModel: FilmeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentFilmeFormBinding.inflate(inflater, container, false)
+        binding = FragmentAdicionarFilmeBinding.inflate(inflater, container, false)
         return binding.root
     }
 

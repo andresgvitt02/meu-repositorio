@@ -19,6 +19,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+        buildFeatures {
+            dataBinding = true
+        }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -40,6 +44,7 @@ android {
 dependencies {
     implementation(libs.lifecycle.livedata)
     implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
     ksp(libs.room.compiler)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)

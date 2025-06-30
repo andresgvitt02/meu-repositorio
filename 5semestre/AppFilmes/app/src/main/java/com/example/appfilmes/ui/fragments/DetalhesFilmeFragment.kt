@@ -5,12 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.appfilmes.R
-
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.example.appfilmes.databinding.FragmentDetalhesFilmeBinding
+import com.example.appfilmes.ui.viewmodel.FilmeViewModel
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class DetalhesFilmeFragment : Fragment() {
 
-    private lateinit var binding: FragmentFilmeDetailBinding
+    private lateinit var binding: FragmentDetalhesFilmeBinding
     private val viewModel: FilmeViewModel by viewModels()
     private val args: DetalhesFilmeFragmentArgs by navArgs()
 
@@ -18,11 +23,14 @@ class DetalhesFilmeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentFilmeDetailBinding.inflate(inflater, container, false)
+        binding = FragmentDetalhesFilmeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Carrega os dados do filme
         lifecycleScope.launch {
             val filme = viewModel.getById(args.filmeId)
             filme?.let {
@@ -31,6 +39,13 @@ class DetalhesFilmeFragment : Fragment() {
                 binding.anoText.text = it.ano.toString()
                 binding.generoText.text = it.genero
             }
+        }
+
+        // Configura o botão de Editar para navegar para a tela de edição
+        binding.btnEditar.setOnClickListener {
+            val action = DetalhesFilmeFragmentDirections
+                .actionDetalhesFilmeFragmentToEditarFilmeFragment(args.filmeId)
+            findNavController().navigate(action)
         }
     }
 }
