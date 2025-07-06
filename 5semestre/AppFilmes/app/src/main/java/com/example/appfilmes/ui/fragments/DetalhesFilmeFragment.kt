@@ -30,7 +30,6 @@ class DetalhesFilmeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Carrega os dados do filme
         lifecycleScope.launch {
             val filme = viewModel.getById(args.filmeId)
             filme?.let {
@@ -41,7 +40,6 @@ class DetalhesFilmeFragment : Fragment() {
             }
         }
 
-        // Configura o botão de Editar para navegar para a tela de edição
         binding.btnEditar.setOnClickListener {
             val action = DetalhesFilmeFragmentDirections
                 .actionDetalhesFilmeFragmentToEditarFilmeFragment(args.filmeId)

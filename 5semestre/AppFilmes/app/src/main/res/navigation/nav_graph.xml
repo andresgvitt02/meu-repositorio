@@ -39,7 +39,6 @@
             app:argType="integer"
             android:defaultValue="0" />
 
-        <!-- 🚀 Adicionado para permitir navegação -->
         <action
             android:id="@+id/action_detalhesFilmeFragment_to_editarFilmeFragment"
             app:destination="@id/editarFilmeFragment">

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Projeto AP2</string>
+    <string name="toolbar_title_details">Detalhes do Filme</string>
+    <string name="toolbar_title">Lista dos Filmes</string>
+</resources>

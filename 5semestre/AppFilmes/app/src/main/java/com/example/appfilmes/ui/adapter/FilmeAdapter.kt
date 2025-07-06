@@ -9,7 +9,7 @@ import com.example.appfilmes.databinding.ItemFilmeBinding
 class FilmeAdapter(
     private val onItemClick: (Filme) -> Unit,
     private val onItemLongClick: (Filme) -> Unit,
-    private val onDeleteClick: (Filme) -> Unit // Adicionado para a lixeira
+    private val onDeleteClick: (Filme) -> Unit
 ) : RecyclerView.Adapter<FilmeAdapter.FilmeViewHolder>() {
 
     private var filmes: List<Filme> = listOf()
@@ -42,7 +42,6 @@ class FilmeAdapter(
                 true
             }
 
-            // Novo: click no ícone da lixeira
             binding.deleteIcon.setOnClickListener {
                 onDeleteClick(filme)
             }

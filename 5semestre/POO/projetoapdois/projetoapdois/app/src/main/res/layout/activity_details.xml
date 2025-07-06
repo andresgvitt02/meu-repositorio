@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar_color"
+        app:title="@string/toolbar_title_details"
+        app:titleTextColor="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/detalheImagem"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_foreground" />
+
+            <TextView
+                android:id="@+id/detalheTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Título"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingTop="12dp"/>
+
+            <TextView
+                android:id="@+id/detalheDiretor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Direção"
+                android:paddingTop="8dp" />
+
+            <TextView
+                android:id="@+id/detalheAno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ano"
+                android:paddingTop="4dp" />
+
+            <TextView
+                android:id="@+id/detalheSinopse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sinopse"
+                android:paddingTop="8dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

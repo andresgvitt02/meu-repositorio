@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
 
         val navController = navHostFragment.navController
 
-        // Se quiser usar ActionBar com título do fragment:
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
