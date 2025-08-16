@@ -1,0 +1,55 @@
+API CRUD - Exemplo simples com Spring Boot
+Esse projeto é um exemplo básico de uma API REST usando Spring Boot. A ideia aqui é ter um CRUD (Create, Read, Update, Delete) bem direto ao ponto para usuários e tarefas.
+
+Como rodar
+Para rodar o projeto:
+
+bash
+Copiar
+Editar
+./gradlew bootRun  
+Ou, se estiver usando uma IDE (tipo IntelliJ ou Eclipse), é só rodar a classe ApicrudApplication.
+
+A aplicação vai subir no http://localhost:8080.
+
+📂 Estrutura básica
+/controller: onde ficam os endpoints da API. Tem o UsuarioController e o TarefaController.
+
+/model: define as entidades Usuario e Tarefa.
+
+/repository: interfaces que cuidam da comunicação com o banco (Spring Data JPA).
+
+/service: onde fica a regra de negócio.
+
+🧑 Endpoints de Usuário
+GET /usuarios → Lista todos os usuários
+
+GET /usuarios/{id} → Busca um usuário pelo ID
+
+POST /usuarios → Cria um novo usuário
+
+PUT /usuarios/{id} → Atualiza um usuário existente
+
+DELETE /usuarios/{id} → Remove um usuário
+
+✅ Endpoints de Tarefa
+GET /tarefas → Lista todas as tarefas
+
+GET /tarefas/{id} → Busca uma tarefa pelo ID
+
+POST /tarefas → Cria uma nova tarefa
+
+PUT /tarefas/{id} → Atualiza uma tarefa existente
+
+DELETE /tarefas/{id} → Remove uma tarefa
+
+🛠 Tecnologias
+Java
+
+Spring Boot
+
+Spring Data JPA
+
+H2 (ou outro banco, se configurado)
+
+Gradle
